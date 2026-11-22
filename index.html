@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amends Studio — Modern Apology & Relationship Restoration Tool</title>
+  <meta name="description" content="Generate thoughtful, emotionally resonant apologies tailored to any recipient, situation, and tone. Select word counts from 50 to 1,000 words, customize emoji styles, copy, and export.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%237B61FF'/%3E%3Cpath d='M16 8C12 8 9 11 9 15c0 5 7 10 7 10s7-5 7-10c0-4-3-7-7-7z' fill='%23FFFFFF'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Navigation Bar
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo" aria-label="Amends Studio Home">
+        <div class="logo-mark">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
+            <path d="M16 9C12.5 9 10 11.5 10 15C10 19.5 16 24 16 24C16 24 22 19.5 22 15C22 11.5 19.5 9 16 9Z" fill="white"/>
+            <circle cx="16" cy="14" r="2.5" fill="#7B61FF"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFFFFF" stop-opacity="0.35"/>
+                <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="brand-name">Amends<span>.studio</span></span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#generator" class="nav-link active">Generator Tool</a>
+        <a href="#templates" class="nav-link">Preset Library</a>
+        <a href="#principles" class="nav-link">Principles</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <a href="#generator" class="btn btn-nav-action">Create Message</a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-inner">
+        <a href="#generator" class="mobile-nav-item">⚡ Generator Tool</a>
+        <a href="#templates" class="mobile-nav-item">📚 Preset Library</a>
+        <a href="#principles" class="mobile-nav-item">💡 Restorative Principles</a>
+        <a href="#faq" class="mobile-nav-item">❓ FAQ</a>
+        <div class="mobile-drawer-divider"></div>
+        <a href="#generator" class="btn btn-primary btn-block">Craft Apology Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Hero Section with 3D Ring Shapes
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <!-- 3D Geometric Floating Shapes -->
+      <div class="hero-shapes-canvas" aria-hidden="true">
+        <div class="torus-shape shape-top-left">
+          <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="160" cy="160" rx="130" ry="85" transform="rotate(-25 160 160)" stroke="url(#ring-grad-1)" stroke-width="44" stroke-linecap="round" opacity="0.4"/>
+            <defs>
+              <linearGradient id="ring-grad-1" x1="30" y1="50" x2="290" y2="270" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFFFFF" stop-opacity="0.85"/>
+                <stop offset="0.6" stop-color="#C4B5FD" stop-opacity="0.4"/>
+                <stop offset="1" stop-color="#5B21B6" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="torus-shape shape-top-right">
+          <svg viewBox="0 0 360 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="180" cy="180" rx="145" ry="90" transform="rotate(35 180 180)" stroke="url(#ring-grad-2)" stroke-width="48" opacity="0.38"/>
+            <defs>
+              <linearGradient id="ring-grad-2" x1="40" y1="20" x2="320" y2="340" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#DDD6FE" stop-opacity="0.9"/>
+                <stop offset="0.7" stop-color="#8B5CF6" stop-opacity="0.4"/>
+                <stop offset="1" stop-color="#4C1D95" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <div class="torus-shape shape-center-floating">
+          <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="120" cy="120" r="85" stroke="url(#ring-grad-3)" stroke-width="28" opacity="0.25"/>
+            <defs>
+              <linearGradient id="ring-grad-3" x1="20" y1="20" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#FFFFFF" stop-opacity="0.65"/>
+                <stop offset="1" stop-color="#7C3AED" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge-pill">
+          <span class="badge-dot"></span>
+          Intelligent Relationship &amp; Communication Restorer
+        </div>
+
+        <h1 class="hero-display">Words That Mend What Matters Most</h1>
+
+        <p class="body-large hero-subline">
+          Craft emotionally intelligent, sincere, and beautifully worded apology messages. Tailor the tone, situation, and length to rebuild trust with the people who matter.
+        </p>
+
+        <div class="hero-mood-tags">
+          <span class="mood-tag">✨ Sincere &amp; Heartfelt</span>
+          <span class="mood-tag">🧸 Playful &amp; Sweet</span>
+          <span class="mood-tag">🌹 Romantic &amp; Tender</span>
+          <span class="mood-tag">💼 Crisp &amp; Professional</span>
+          <span class="mood-tag">🎭 Reflective Letter</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Generator Tool Workspace (Layered Card breaking out of hero)
+         ========================================================================== -->
+    <section class="generator-workspace-section" id="generator">
+      <div class="container">
+        
+        <div class="tool-card-elevated">
+          
+          <!-- Left: Controls Panel -->
+          <div class="controls-panel">
+            <div class="panel-header">
+              <div class="panel-title-group">
+                <span class="panel-icon">⚙️</span>
+                <h2 class="panel-heading">Customize Parameters</h2>
+              </div>
+              <button type="button" id="resetAllBtn" class="btn-ghost-sm" title="Reset all fields to default">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                Reset
+              </button>
+            </div>
+
+            <!-- Recipient Input -->
+            <div class="form-group">
+              <label for="recipientInput" class="form-label">
+                Recipient Name
+                <span class="form-hint">(Who is this message for?)</span>
+              </label>
+              <input type="text" id="recipientInput" class="form-input" placeholder="e.g., Elena, David, Partner, Team" value="Elena">
+            </div>
+
+            <!-- Situation / Context Selector -->
+            <div class="form-group">
+              <label for="situationSelect" class="form-label">
+                Incident &amp; Context
+              </label>
+              <div class="select-wrapper">
+                <select id="situationSelect" class="form-select">
+                  <option value="lateReply">📱 Delayed reply / Unresponsive communication</option>
+                  <option value="forgotEvent">🎂 Overlooked anniversary, birthday, or milestone</option>
+                  <option value="madeMistake">😬 Careless oversight or unforced blunder</option>
+                  <option value="argument">⚡ Heated discussion or sharp words during a dispute</option>
+                  <option value="missedCall">📞 Missed urgent call or dropped commitment</option>
+                  <option value="general" selected>🕊️ General heartfelt amends &amp; reconciliation</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Tone / Mood Selector -->
+            <div class="form-group">
+              <label for="moodSelect" class="form-label">
+                Emotional Tone
+              </label>
+              <div class="select-wrapper">
+                <select id="moodSelect" class="form-select">
+                  <option value="sincere" selected>💖 Heartfelt &amp; Deeply Sincere</option>
+                  <option value="playful">🧸 Warm, Playful &amp; Disarming</option>
+                  <option value="dramatic">🎭 Poetic &amp; Soulful Letter</option>
+                  <option value="humorous">🙃 Lighthearted &amp; Self-Aware</option>
+                  <option value="romantic">🌹 Devoted &amp; Romantically Attentive</option>
+                  <option value="professional">💼 Professional, Accountable &amp; Direct</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Target Word Count Chips -->
+            <div class="form-group">
+              <label class="form-label">
+                Target Length
+                <span class="form-hint">(Word count target)</span>
+              </label>
+              <div class="word-count-group" role="group" aria-label="Select target word length">
+                <button type="button" class="word-chip" data-words="50">
+                  <span class="chip-number">50</span>
+                  <span class="chip-unit">words</span>
+                </button>
+                <button type="button" class="word-chip active" data-words="100">
+                  <span class="chip-number">100</span>
+                  <span class="chip-unit">words</span>
+                </button>
+                <button type="button" class="word-chip" data-words="500">
+                  <span class="chip-number">500</span>
+                  <span class="chip-unit">words</span>
+                </button>
+                <button type="button" class="word-chip" data-words="1000">
+                  <span class="chip-number">1,000</span>
+                  <span class="chip-unit">words</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Emoji Density Selector -->
+            <div class="form-group">
+              <label for="emojiDensitySelect" class="form-label">
+                Emoji Presence
+              </label>
+              <div class="select-wrapper">
+                <select id="emojiDensitySelect" class="form-select">
+                  <option value="subtle" selected>✨ Subtle &amp; Tastefully Balanced</option>
+                  <option value="expressive">🎉 Highly Expressive &amp; Vibrant</option>
+                  <option value="emojis_only">🥺 Emojis Only Flow (Pure emotion)</option>
+                  <option value="none">🚫 Clean Text Only (No Emojis)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Severity / Intensity Slider -->
+            <div class="form-group">
+              <div class="label-with-badge">
+                <label for="intensityInput" class="form-label">Blunder Severity</label>
+                <span id="intensityBadge" class="range-status-badge">Moderate Misstep 😬</span>
+              </div>
+              <input type="range" id="intensityInput" class="form-slider" min="1" max="4" value="2" step="1">
+            </div>
+
+            <!-- Primary Actions -->
+            <div class="generator-action-row">
+              <button type="button" id="generateBtn" class="btn btn-primary btn-generate">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                Generate Message
+              </button>
+              <button type="button" id="randomizeBtn" class="btn btn-secondary-outline" title="Generate with surprise randomized settings">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 8h.01M8 8h.01M8 16h.01M16 16h.01M12 12h.01"/></svg>
+                Surprise Me
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Output & Action Toolbar -->
+          <div class="output-panel">
+            <div class="output-panel-header">
+              <div class="output-title-group">
+                <span class="output-status-indicator"></span>
+                <h3 class="output-heading">Generated Message Canvas</h3>
+              </div>
+
+              <div class="text-metrics">
+                <div class="metric-tag"><span id="wordCountDisplay">0</span> words</div>
+                <div class="metric-tag"><span id="charCountDisplay">0</span> chars</div>
+              </div>
+            </div>
+
+            <div class="output-editor-wrapper">
+              <textarea 
+                id="outputTextarea" 
+                class="output-editor" 
+                placeholder="Click 'Generate Message' or select a preset template below to craft your custom apology..." 
+                spellcheck="false"
+                aria-label="Generated apology message text box"></textarea>
+
+              <div id="emptyCanvasState" class="empty-canvas-state">
+                <div class="empty-icon-wrap">💌</div>
+                <h4 class="empty-title">Ready when you are</h4>
+                <p class="empty-desc">Choose your parameters on the left and tap Generate Message to compose a personalized, thoughtful apology.</p>
+              </div>
+            </div>
+
+            <!-- Action Toolbar -->
+            <div class="output-toolbar">
+              <div class="toolbar-primary-group">
+                <button type="button" id="copyBtn" class="tool-btn btn-copy" title="Copy text to clipboard">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  Copy All
+                </button>
+                <button type="button" id="saveTxtBtn" class="tool-btn" title="Download text as .txt file">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Save .TXT
+                </button>
+                <button type="button" id="whatsappBtn" class="tool-btn tool-btn-whatsapp" title="Share directly to WhatsApp">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.79 14.07c-.24.67-1.39 1.29-1.93 1.37-.5.08-1.14.12-3.69-.93-3.26-1.34-5.36-4.66-5.52-4.88-.16-.22-1.32-1.75-1.32-3.34 0-1.59.83-2.37 1.13-2.69.29-.32.65-.4 86-.4.22 0 .44 0 .63.01.21.01.48-.08.76.57.29.69.97 2.37 1.06 2.54.08.18.14.39.02.63-.11.24-.17.38-.34.58-.17.2-.36.45-.52.6-.17.17-.35.35-.15.7.2.34.89 1.47 1.91 2.38 1.32 1.17 2.43 1.54 2.77 1.71.34.17.55.15.75-.09.21-.24.89-1.04 1.13-1.4.24-.36.48-.3.8-.18.32.12 2.05.97 2.4 1.14.36.18.59.26.68.4.08.14.08.83-.16 1.5z"/></svg>
+                  WhatsApp
+                </button>
+                <button type="button" id="speakBtn" class="tool-btn" title="Read message aloud with speech synthesis">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+                  Speak
+                </button>
+              </div>
+
+              <button type="button" id="clearOutputBtn" class="tool-btn btn-clear" title="Clear current message">
+                Clear
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Preset Templates Gallery Section
+         ========================================================================== -->
+    <section class="section-templates" id="templates">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-kicker">CURATED PRESETS</div>
+         <h2 class="section-display">Ready-to-Use Apology Templates</h2>
+<p class="body-large section-lead">
+  Select any crafted blueprint to preview and instantly load into the generator for fine-tuning.
+</p>
+
+
+<p class="body-large">
+  Our apology message generator helps you say sorry in a way that feels sincere,
+  personal, and easy to send. Instead of staring at a blank screen, you can start
+  from a thoughtful template written for real situations, such as arguments with a
+  partner, missed plans, forgotten dates, or workplace mistakes. Each template can
+  be loaded into the generator, where you adjust the tone, add names, and shape the
+  message until it sounds like you.
+</p>
+
+<p class="body-large">
+  A good apology names what happened, takes responsibility, and promises to do
+  better. Our templates follow that structure, so your words land with warmth
+  rather than excuses. If you want a lighthearted touch for a close friend or
+  partner, you can try a
+  <a href="https://sorry100times.org/">sorry 100 times</a>
+  text to break the tension and show how much you mean it, then follow it with
+  your genuine message. Everything is free, works on any phone or computer, and
+  needs no signup, so you can make things right while the moment still matters.
+</p>
+
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="template-filter-pills" role="tablist" aria-label="Template categories">
+          <button type="button" class="filter-pill active" data-filter="all" role="tab" aria-selected="true">All Presets</button>
+          <button type="button" class="filter-pill" data-filter="sincere" role="tab" aria-selected="false">💖 Heartfelt</button>
+          <button type="button" class="filter-pill" data-filter="romantic" role="tab" aria-selected="false">🌹 Romantic</button>
+          <button type="button" class="filter-pill" data-filter="playful" role="tab" aria-selected="false">🧸 Playful</button>
+          <button type="button" class="filter-pill" data-filter="quick" role="tab" aria-selected="false">⚡ Quick Texts</button>
+          <button type="button" class="filter-pill" data-filter="professional" role="tab" aria-selected="false">💼 Professional</button>
+        </div>
+
+        <!-- Template Cards Grid -->
+        <div id="templatesGrid" class="templates-grid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Principles Bento Grid Section (Asymmetric Bento layout from DESIGN.md)
+         ========================================================================== -->
+    <section class="section-bento" id="principles">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">PSYCHOLOGY OF RECONCILIATION</div>
+          <h2 class="section-display">Principles to heal &amp; rebuild trust</h2>
+          <p class="body-large section-lead">
+            A meaningful apology is more than just saying "I'm sorry." Grounded communication practices that rebuild genuine emotional safety.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          
+          <!-- Bento Card 1 (Large): Unconditional Accountability -->
+          <div class="bento-card bento-card-large bento-accountability">
+            <div class="bento-card-content">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <h3 class="bento-title">Unconditional Ownership</h3>
+              <p class="body bento-desc">
+                True apologies never include defensiveness or conditional phrasing like "I'm sorry if you felt hurt." Clearly name your specific choices, validate the impact, and own the consequences without shifting blame.
+              </p>
+            </div>
+
+            <!-- Visual Contrast Box -->
+            <div class="bento-mockup-container">
+              <div class="contrast-row bad">
+                <span class="badge-status-pill bad">AVOID</span>
+                <p class="contrast-quote">"I'm sorry you got upset, but I was overwhelmed and you were overreacting."</p>
+              </div>
+              <div class="contrast-row good">
+                <span class="badge-status-pill good">RECOMMENDED</span>
+                <p class="contrast-quote">"I was careless with my words and left you feeling disregarded. That was wrong of me."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 2 (Large): Action-Oriented Restitution -->
+          <div class="bento-card bento-card-large bento-restitution">
+            <div class="bento-card-content">
+              <div class="feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <h3 class="bento-title">Concrete Restitution &amp; Action</h3>
+              <p class="body bento-desc">
+                Words open the door, but sustained behavioral change locks in healing. State precisely what adjustments you are implementing so the mistake does not recur.
+              </p>
+            </div>
+
+            <!-- Visual Steps Widget -->
+            <div class="bento-mockup-container restitution-steps">
+              <div class="step-line-item">
+                <span class="step-num">01</span>
+                <div>
+                  <strong>Acknowledge &amp; Validate</strong>
+                  <span>Mirror back their feelings with zero deflection</span>
+                </div>
+              </div>
+              <div class="step-line-item">
+                <span class="step-num">02</span>
+                <div>
+                  <strong>Express Genuine Regret</strong>
+                  <span>Communicate authentic remorse for the impact caused</span>
+                </div>
+              </div>
+              <div class="step-line-item">
+                <span class="step-num">03</span>
+                <div>
+                  <strong>Offer Actionable Amends</strong>
+                  <span>Propose tangible steps to prevent future recurrence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 3 (Small): Emotional Attunement -->
+          <div class="bento-card bento-card-small bento-listening">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3 class="bento-title">Patient Active Listening</h3>
+            <p class="body bento-desc">
+              Allow the other person to express their thoughts without jumping to explain your side. Give their emotions the space they deserve.
+            </p>
+            <div class="key-pill-tag">Empathetic Silence &gt; Rapid Defense</div>
+          </div>
+
+          <!-- Bento Card 4 (Small): Respecting Space -->
+          <div class="bento-card bento-card-small bento-space">
+            <div class="feature-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="bento-title">Honoring Time &amp; Readiness</h3>
+            <p class="body bento-desc">
+              Forgiveness is a process, not an immediate transaction. Reassure them that you respect their pace and will be ready when they wish to speak.
+            </p>
+            <div class="key-pill-tag">Patience Is Proof of Sincerity</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FAQ Accordion Section
+         ========================================================================== -->
+    <section class="section-faq" id="faq">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
+          <div class="section-kicker">QUESTIONS &amp; INSIGHTS</div>
+          <h2 class="section-display">Frequently Asked Questions</h2>
+          <p class="body-large section-lead">
+            Common guidance on crafting genuine apologies and repairing connections.
+          </p>
+        </div>
+
+        <div class="faq-accordion" role="region" aria-label="Frequently Asked Questions">
+          
+          <!-- Item 1 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" id="faq1-btn" aria-controls="faq1-content">
+              <span class="faq-question">What makes an apology genuinely effective?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq1-content" role="region" aria-labelledby="faq1-btn" hidden>
+              <p class="body faq-answer">
+                An effective apology contains four core pillars: explicit acknowledgment of what occurred, unconditional responsibility without excuses ("I was careless" rather than "I was tired"), genuine validation of the recipient's emotional experience, and a clear commitment to behavioral change.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" id="faq2-btn" aria-controls="faq2-content">
+              <span class="faq-question">How do I decide between a 50-word note and a 500-word letter?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq2-content" role="region" aria-labelledby="faq2-btn" hidden>
+              <p class="body faq-answer">
+                For minor oversights like late replies or quick scheduling mix-ups, a crisp 50-word message avoids dramatizing the situation. For deeper breaches of trust, heated disagreements, or broken commitments, a longer 500 or 1,000-word letter demonstrates that you dedicated time and introspection to process the gravity of what happened.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" id="faq3-btn" aria-controls="faq3-content">
+              <span class="faq-question">Is it okay to use playful or cute tones when apologizing?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq3-content" role="region" aria-labelledby="faq3-btn" hidden>
+              <p class="body faq-answer">
+                Playful or cute tones are best reserved for lighthearted situations between close friends or partners (such as playfully forgetting to pick up dessert or teasing banter gone slightly sideways). When deep hurt or serious trust issues are present, opt for the Heartfelt Sincere or Deep Reflective tone.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" id="faq4-btn" aria-controls="faq4-content">
+              <span class="faq-question">Is my entered message text private and secure?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq4-content" role="region" aria-labelledby="faq4-btn" hidden>
+              <p class="body faq-answer">
+                Yes, completely. All text generation and message editing runs 100% locally in your client browser. None of your recipient names, notes, or messages are ever uploaded, recorded, or stored on remote servers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="faq-item">
+            <button type="button" class="faq-trigger" aria-expanded="false" id="faq5-btn" aria-controls="faq5-content">
+              <span class="faq-question">What should I do if the recipient doesn't respond right away?</span>
+              <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="faq-content" id="faq5-content" role="region" aria-labelledby="faq5-btn" hidden>
+              <p class="body faq-answer">
+                Resist the temptation to send multiple follow-ups asking if they received it. Forgiveness takes emotional energy to process. Giving them breathing room proves that your apology was centered on their well-being rather than seeking immediate relief from guilt.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Call to Action Banner
+         ========================================================================== -->
+    <section class="section-cta">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <h2 class="cta-title">Ready to take the first step toward healing?</h2>
+            <p class="cta-lead">
+              A thoughtful, well-crafted message can bridge distances and restore cherished relationships.
+            </p>
+            <div class="cta-buttons">
+              <a href="#generator" class="btn btn-cta-primary">Launch Generator</a>
+              <a href="#templates" class="btn btn-cta-outline">Browse Presets</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Site Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="#" class="brand-logo footer-logo">
+            <span class="brand-name">Amends<span>.studio</span></span>
+          </a>
+          <p class="footer-tagline">
+            The empathetic message suite for repairing bonds, rebuilding trust, and communicating with authentic care.
+          </p>
+        </div>
+
+        <div class="footer-nav-grid">
+          <div class="footer-col">
+            <div class="footer-heading">TOOL FEATURES</div>
+            <ul class="footer-links">
+              <li><a href="#generator">Message Generator</a></li>
+              <li><a href="#templates">Curated Presets</a></li>
+              <li><a href="#generator">Length Control (50-1000w)</a></li>
+              <li><a href="#generator">Speech Synthesis</a></li>
+              <li><a href="#generator">TXT &amp; WhatsApp Export</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-heading">EMOTIONAL TONES</div>
+            <ul class="footer-links">
+              <li><a href="#generator">Heartfelt &amp; Sincere</a></li>
+              <li><a href="#generator">Romantic &amp; Attentive</a></li>
+              <li><a href="#generator">Warm &amp; Playful</a></li>
+              <li><a href="#generator">Reflective Letter</a></li>
+              <li><a href="#generator">Professional Amends</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-heading">RESOURCES</div>
+            <ul class="footer-links">
+              <li><a href="#principles">Restorative Principles</a></li>
+              <li><a href="#faq">Apology FAQ</a></li>
+              <li><a href="#principles">Accountability Guide</a></li>
+              <li><a href="#templates">Instant Blueprints</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-heading">PRIVACY &amp; ACCESS</div>
+            <ul class="footer-links">
+              <li><a href="#generator">100% Client-Side Privacy</a></li>
+              <li><a href="#generator">Zero Server Logging</a></li>
+              <li><a href="#generator">Accessibility Compliant</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          © <span id="currentYear">2026</span> Amends Studio. Designed for genuine reconciliation.
+        </div>
+        <a href="#hero" class="back-to-top">
+          Back to Top ↑
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Core Script -->
+  <script src="script.js"></script>
+</body>
+</html>
